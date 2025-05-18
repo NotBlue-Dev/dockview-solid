@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/cjs",
+        "tsBuildInfoFile": ".build/tsconfig.tsbuildinfo.cjs",
+        "jsx": "preserve",
+        "lib": ["DOM", "ES2020"],
+        "jsxImportSource": "solid-js",
+        "rootDir": "src"
+    },
+    "include": ["src"],
+    "exclude": ["**/node_modules", "src/__tests__"]
+}
