@@ -20,13 +20,13 @@ export class SolidWatermarkPart implements IWatermarkRenderer {
     }
 
     public init(parameters: WatermarkRendererInitParameters): void {
-        this.part = new SolidPart(
+        this.part = new SolidPart<IWatermarkPanelProps>(
             this.element,
             this.component,
             {
                 group: parameters.group,
                 containerApi: parameters.containerApi,
-            }
+            } as IWatermarkPanelProps
         );
     }
 

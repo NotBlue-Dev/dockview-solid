@@ -2,6 +2,7 @@ import { IPanePart, PanePanelComponentInitParameter, PanelUpdateEvent } from 'do
 import { SolidPart } from '../solid';
 import { IPaneviewPanelProps } from './paneview';
 import type { Component } from 'solid-js';
+import { PaneviewPanelApiImpl } from 'dockview-core/dist/cjs/api/paneviewPanelApi';
 
 /**
  * SolidJS implementation of pane panel section for Dockview paneview integration.
@@ -20,16 +21,15 @@ export class SolidPanePanelSection implements IPanePart {
     }
 
     init(parameters: PanePanelComponentInitParameter): void {
-        this.part = new SolidPart(
-            this.element,
-            this.componentFn,
-            {
-                params: parameters.params,
-                api: parameters.api,
-                title: parameters.title,
-                containerApi: parameters.containerApi,
-            }
-        );
+        const { params, api, title, containerApi } = parameters;
+        const adaptedApi = api as PaneviewPanelApiImpl;
+        const adaptedParams: IPaneviewPanelProps = {
+            params,
+            api: adaptedApi,
+            title,
+            containerApi,
+        };
+        this.part = new SolidPart(this.element, this.componentFn, adaptedParams);
     }
 
     toJSON() {

@@ -85,11 +85,11 @@ function createBundle(format, options) {
         output['name'] = name;
     }
 
-    external.push('react', 'react-dom');
+    external.push('solid', 'solid-dom');
 
     if (format === 'umd') {
-        output.globals['react'] = 'React';
-        output.globals['react-dom'] = 'ReactDOM';
+        output.globals['solid'] = 'Solid';
+        output.globals['solid-dom'] = 'SolidDOM';
     }
 
     return {

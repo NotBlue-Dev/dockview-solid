@@ -23,16 +23,16 @@
     "react",
     "react-component"
   ],
-  "homepage": "https://github.com/mathuo/dockview",
+  "homepage": "https://github.com/NotBlue-Dev/dockview-solidJS",
   "bugs": {
-    "url": "https://github.com/mathuo/dockview/issues"
+    "url": "https://github.com/NotBlue-Dev/dockview-solidJS/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mathuo/dockview.git"
+    "url": "https://github.com/NotBlue-Dev/dockview-solidJS.git"
   },
   "license": "MIT",
-  "author": "https://github.com/mathuo",
+  "author": "https://github.com/NotBlue-Dev",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.ts",
@@ -45,6 +45,7 @@
     "build:bundles": "rollup -c",
     "build:cjs": "cross-env tsc --build ./tsconfig.json --verbose --extendedDiagnostics",
     "build:css": "node scripts/copy-css.js",
+    "build:esm:only": "npm run build:esm && npm run build:css && npm run build:bundles",
     "build:esm": "cross-env tsc --build ./tsconfig.esm.json --verbose --extendedDiagnostics",
     "build:package": "npm run build:cjs && npm run build:esm && npm run build:css",
     "clean": "rimraf dist/ .build/ .rollup.cache/",
@@ -52,25 +53,21 @@
     "rebuild": "npm run clean && npm run build"
   },
   "dependencies": {
+    "dockview": "^4.2.5",
+    "dockview-core": "^4.2.5"
+  },
+  "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
-    "dockview-core": "^4.2.5",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tslib": "^2.8.1",
-    "typescript": "^5.8.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-typescript": "^7.27.1",
-    "@rollup/plugin-babel": "^6.0.4",
-    "babel-preset-solid": "^1.9.6",
     "cross-env": "^7.0.3",
     "esbuild": "^0.25.4",
     "esbuild-plugin-solid": "^0.6.0",
     "rollup": "^4.41.0",
-    "rollup-plugin-esbuild": "^6.2.1"
+    "rollup-plugin-esbuild": "^6.2.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "solid-js": "^1.9.3"
