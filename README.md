@@ -1,7 +1,8 @@
 <div align="center">
-<h1>dockview</h1>
+<h1>dockview solidJS</h1>
 
-<p>Zero dependency layout manager supporting tabs, groups, grids and splitviews with ReactJS support written in TypeScript</p>
+<p>Zero dependency layout manager supporting tabs, groups, grids and splitviews for solidJS written in TypeScript</p>
+<p>This is a port of dockview react to solidJS</p>
 
 </div>
 
