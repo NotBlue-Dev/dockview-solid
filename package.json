@@ -1,5 +1,5 @@
 {
-  "name": "dockview",
+  "name": "dockview-solid",
   "version": "4.2.5",
   "description": "Zero dependency layout manager supporting tabs, grids and splitviews",
   "keywords": [
@@ -23,13 +23,13 @@
     "react",
     "react-component"
   ],
-  "homepage": "https://github.com/NotBlue-Dev/dockview-solidJS",
+  "homepage": "https://github.com/NotBlue-Dev/dockview-solid",
   "bugs": {
-    "url": "https://github.com/NotBlue-Dev/dockview-solidJS/issues"
+    "url": "https://github.com/NotBlue-Dev/dockview-solid/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NotBlue-Dev/dockview-solidJS.git"
+    "url": "https://github.com/NotBlue-Dev/dockview-solid.git"
   },
   "license": "MIT",
   "author": "https://github.com/NotBlue-Dev",
@@ -47,14 +47,17 @@
     "build:css": "node scripts/copy-css.js",
     "build:esm:only": "npm run build:esm && npm run build:css && npm run build:bundles",
     "build:esm": "cross-env tsc --build ./tsconfig.esm.json --verbose --extendedDiagnostics",
-    "build:package": "npm run build:cjs && npm run build:esm && npm run build:css",
+    "build:package": "npm run build:esm && npm run build:css",
     "clean": "rimraf dist/ .build/ .rollup.cache/",
     "prepublishOnly": "npm run rebuild",
     "rebuild": "npm run clean && npm run build"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
     "dockview": "^4.2.5",
-    "dockview-core": "^4.2.5"
+    "dockview-core": "^4.2.5",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.1",

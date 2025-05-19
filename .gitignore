@@ -1,3 +1,5 @@
 node_modules/
 dist/
 .rollup.cache/
+.dist/
+.build/
